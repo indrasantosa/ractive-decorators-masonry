@@ -30,34 +30,46 @@
 
 */
 
+var masonry = require('')
+
 (function ( global, factory ) {
 
 	'use strict';
 
 	// AMD environment
 	if ( typeof define === 'function' && define.amd ) {
-		define([ 'ractive' ], factory );
+		define([ 'ractive', 'masonry' ], factory );
 	}
 
 	// Common JS (i.e. node/browserify)
 	else if ( typeof module !== 'undefined' && module.exports && typeof require === 'function' ) {
-		factory( require( 'ractive' ) );
+		factory( require( 'ractive' ), require( 'masonry' ) );
 	}
 
 	// browser global
 	else if ( global.Ractive ) {
-		factory( global.Ractive );
+		factory( global.Ractive, global.Masonry );
 	}
 
 	else {
-		throw new Error( 'Could not find Ractive! It must be loaded before the ractive-decorators-masonryjs plugin' );
+		throw new Error( 'Could not find Ractive or Masonry! It must be loaded before the ractive-decorators-masonryjs plugin' );
 	}
 
-}( typeof window !== 'undefined' ? window : this, function ( Ractive ) {
+}( typeof window !== 'undefined' ? window : this, function ( Ractive, Masonry ) {
 
 	'use strict';
 
 	/* plugin code goes here */
-	
+	var masonryContainerDecorator = function(node, content) {
+		
+	};
+
+	var masonryItemDecorator = function(node, content, parentNode) {
+		parentNode.addItems(node);
+
+		return {
+			teardown: function() {}
+		}
+	};
 
 }));

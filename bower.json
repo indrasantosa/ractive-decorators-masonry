@@ -2,7 +2,7 @@
   "name": "ractive-decorators-masonryjs",
   "version": "0.1.0",
   "author": "Indra Santosa",
-  "main": "ractive-decorators-masonryjs.js",
+  "main": "src/ractive-decorators-masonryjs.js",
   "dependencies": {
     "ractive": "^0.5.4",
     "masonry": "~3.1.5"
