@@ -1,0 +1,16 @@
+{
+	"name": "ractive-decorators-masonryjs",
+	"repo": "git://github.com/indrasantosa/ractive-decorator-masonryjs.git",
+	"description": "ractive-decorators-masonryjs",
+	"version": "0.1.0",
+	"keywords": [],
+	"dependencies": {
+		"ractivejs/ractive": "^0.5.4"
+	},
+	"development": {},
+	"license": "MIT",
+	"main": "ractive-decorators-masonryjs.js",
+	"scripts": [
+		"ractive-decorators-masonryjs.js"
+	]
+}
