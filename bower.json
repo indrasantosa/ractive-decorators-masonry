@@ -1,6 +1,6 @@
 {
   "name": "ractive-decorators-masonryjs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Indra Santosa",
   "main": "src/ractive-decorators-masonryjs.js",
   "dependencies": {
@@ -13,7 +13,6 @@
     "demo",
     "grunt",
     "node_modules",
-    "src",
     "test",
     "Gruntfile.js",
     "index.html",
