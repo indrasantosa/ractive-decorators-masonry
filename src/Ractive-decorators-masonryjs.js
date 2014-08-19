@@ -67,6 +67,7 @@
 		}
 	};
 
+	masonryItemDecorator.parentInfo = this;
 	masonryItemDecorator.parentNodeId = '#container';
 	masonryItemDecorator.masonryOptions = {
 		columnWidth: 250,
