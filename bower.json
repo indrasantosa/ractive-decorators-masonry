@@ -1,6 +1,6 @@
 {
   "name": "ractive-decorators-masonryjs",
-  "version": "0.1.1",
+  "version": "0.0.1",
   "author": "Indra Santosa",
   "main": "src/ractive-decorators-masonryjs.js",
   "dependencies": {
