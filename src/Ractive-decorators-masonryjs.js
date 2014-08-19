@@ -78,5 +78,5 @@
 		}
 	};
 
-	Ractive.decorators.masonryItemDecorator = masonryItemDecorator;
+	Ractive.decorators.masonryItem = masonryItemDecorator;
 }));
