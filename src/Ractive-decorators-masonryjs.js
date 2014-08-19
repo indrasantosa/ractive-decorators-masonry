@@ -70,12 +70,14 @@
 
 	//masonryItemDecorator.parentInfo = this;
 	//masonryItemDecorator.parentNodeId = '#container';
-	masonryItemDecorator.parentNodeId = '#container';
-	masonryItemDecorator.parentNodes = new Masonry();
+
+	/* Default backup container to #container */
+	var container = masonryItemDecorator.parentNodeId = '#container';
 	masonryItemDecorator.masonryOptions = {
 		columnWidth: 250,
 		itemSelector: '.item'
 	};
+	masonryItemDecorator.parentNodes = new Masonry(container, masonryItemDecorator.masonryOptions);
 
 	Ractive.decorators.masonryItem = masonryItemDecorator;
 }));
