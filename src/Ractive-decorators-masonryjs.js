@@ -45,7 +45,7 @@
 	}
 
 	// browser global
-	else if ( global.Ractive ) {
+	else if ( global.Ractive && global.Masonry ) {
 		factory( global.Ractive, global.Masonry );
 	}
 
