@@ -77,7 +77,12 @@
 		columnWidth: 250,
 		itemSelector: '.item'
 	};
-	masonryItemDecorator.parentNodes = new Masonry(container, masonryItemDecorator.masonryOptions);
+	if(container) {
+		masonryItemDecorator.parentNodes = new Masonry(container, masonryItemDecorator.masonryOptions);	
+	} else {
+		masonryItemDecorator.parentNodes = null;
+	}
+	
 
 	Ractive.decorators.masonryItem = masonryItemDecorator;
 }));
