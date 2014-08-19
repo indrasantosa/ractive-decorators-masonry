@@ -58,6 +58,7 @@
 	'use strict';
 
 	/* plugin code goes here */
+	/*
 	var masonryContainerDecorator = function(node, content) {
 		var msnry = new Masonry(node);
 
@@ -67,6 +68,7 @@
 			}
 		}
 	};
+	*/
 
 	var masonryItemDecorator = function(node, content, parentNode) {
 		parentNode.addItems(node);
