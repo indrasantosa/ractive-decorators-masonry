@@ -71,7 +71,9 @@
 	*/
 
 	var masonryItemDecorator = function(node, content, parentNode) {
-		parentNode.addItems(node);
+		var container = document.querySelector(parentNode);
+		var msnry = new Masonry( container );
+		msnry.addItems(node);
 
 		return {
 			teardown: function() {}
