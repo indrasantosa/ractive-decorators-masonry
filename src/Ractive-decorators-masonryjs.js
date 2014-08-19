@@ -72,7 +72,7 @@
 	//masonryItemDecorator.parentNodeId = '#container';
 
 	/* Default backup container to #container */
-	var container = masonryItemDecorator.parentNodeId = '#container';
+	var container = document.querySelector('#container');
 	masonryItemDecorator.masonryOptions = {
 		columnWidth: 250,
 		itemSelector: '.item'
