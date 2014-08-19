@@ -20,8 +20,28 @@ Or, if you're using a module loader, require this module:
 require( 'ractive-decorators-masonryjs' );
 ```
 
-**plugin-specific instructions to go here...**
+Create Masonry Container :
+```
+var container = document.querySelector("#container");
+var msnry = new Masonry( container, {columnWidth: 250, itemSelector: ".item"});
+```
 
+Pass in masonry object(msnry) to parent Nodes then initialize Ractive accordingly :
+```
+Ractive.decorators.masonryItem.parentNodes = msnry;
+var ractive = new Ractive({
+	el: 'container',
+	template: '#template',
+	data: pageData
+});
+```
+
+In template script, add decorator 'masonryItem' to render item accordingly
+```
+{{#each pageData}}
+<div decorator='masonryItem' class="item" style="background-color: {{color}}; height: {{height}}px">{{name}}</div>
+{{/each}}
+```
 
 
 ## License
