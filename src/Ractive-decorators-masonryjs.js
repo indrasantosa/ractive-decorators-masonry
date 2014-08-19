@@ -62,7 +62,7 @@
 		//var msnry = new Masonry( container, masonryItemDecorator.masonryOptions );
 		
 
-		//var msnry = masonryItemDecorator.parentNodes;
+		var msnry = masonryItemDecorator.parentNodes;
 		msnry.addItems(node);
 		msnry.appended(node);
 
