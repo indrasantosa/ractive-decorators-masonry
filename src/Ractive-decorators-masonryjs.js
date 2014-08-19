@@ -28,6 +28,23 @@
 
 	<< more specific instructions for this plugin go here... >>
 
+		Create Masonry Container :
+		var container = document.querySelector("#container");
+		var msnry = new Masonry( container, {columnWidth: 250, itemSelector: ".item"});
+
+		Pass in masonry object(msnry) to parent Nodes then initialize Ractive accordingly :
+		Ractive.decorators.masonryItem.parentNodes = msnry;
+		var ractive = new Ractive({
+			el: 'container',
+			template: '#template',
+			data: pageData
+		});
+
+		In template, add decorator 'masonryItem' to rendered item accordingly
+		{{#each pageData}}
+		<div decorator='masonryItem' class="item" style="background-color: {{color}}; height: {{height}}px">{{name}}</div>
+		{{/each}}
+
 */
 
 (function ( global, factory ) {
@@ -58,10 +75,6 @@
 	'use strict';
 
 	var masonryItemDecorator = function(node, content) {
-		//var container = document.querySelector(masonryItemDecorator.parentNodeId);
-		//var msnry = new Masonry( container, masonryItemDecorator.masonryOptions );
-		
-
 		var msnry = masonryItemDecorator.parentNodes;
 		msnry.addItems(node);
 		msnry.appended(node);
@@ -71,15 +84,13 @@
 		}
 	};
 
-	//masonryItemDecorator.parentInfo = this;
-	//masonryItemDecorator.parentNodeId = '#container';
-
-	/* Default backup container to #container */
-	var container = document.querySelector('#container');
+	/* Set default values */
 	masonryItemDecorator.masonryOptions = {
 		columnWidth: 250,
 		itemSelector: '.item'
 	};
+
+	var container = document.querySelector('#container');
 	if(container) {
 		masonryItemDecorator.parentNodes = new Masonry(container, masonryItemDecorator.masonryOptions);	
 	} else {
