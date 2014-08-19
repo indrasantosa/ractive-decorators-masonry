@@ -57,27 +57,20 @@
 
 	'use strict';
 
-	/* plugin code goes here */
-	/*
-	var masonryContainerDecorator = function(node, content) {
-		var msnry = new Masonry(node);
-
-		return {
-			teardown: function() {
-				msnry.destroy();
-			}
-		}
-	};
-	*/
-
-	var masonryItemDecorator = function(node, content, parentNode) {
-		var container = document.querySelector(parentNode);
-		var msnry = new Masonry( container );
+	var masonryItemDecorator = function(node, content) {
+		var container = document.querySelector(masonryItemDecorator.parentNodeId);
+		var msnry = new Masonry( container, masonryItemDecorator.masonryOptions );
 		msnry.addItems(node);
 
 		return {
 			teardown: function() {}
 		}
+	};
+
+	masonryItemDecorator.parentNodeId = '#container';
+	masonryItemDecorator.masonryOptions = {
+		columnWidth: 250,
+		itemSelector: '.item'
 	};
 
 	Ractive.decorators.masonryItem = masonryItemDecorator;
