@@ -60,8 +60,11 @@
 	var masonryItemDecorator = function(node, content) {
 		//var container = document.querySelector(masonryItemDecorator.parentNodeId);
 		//var msnry = new Masonry( container, masonryItemDecorator.masonryOptions );
-		var msnry = masonryItemDecorator.parentNodes;
+		
+
+		//var msnry = masonryItemDecorator.parentNodes;
 		msnry.addItems(node);
+		msnry.appended(node);
 
 		return {
 			teardown: function() {}
