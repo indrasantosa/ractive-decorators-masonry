@@ -30,8 +30,6 @@
 
 */
 
-var masonry = require('')
-
 (function ( global, factory ) {
 
 	'use strict';
@@ -61,7 +59,13 @@ var masonry = require('')
 
 	/* plugin code goes here */
 	var masonryContainerDecorator = function(node, content) {
-		
+		var msnry = new Masonry(node);
+
+		return {
+			teardown: function() {
+				msnry.destroy();
+			}
+		}
 	};
 
 	var masonryItemDecorator = function(node, content, parentNode) {
