@@ -58,17 +58,20 @@
 	'use strict';
 
 	var masonryItemDecorator = function(node, content) {
-		var container = document.querySelector(masonryItemDecorator.parentNodeId);
-		var msnry = new Masonry( container, masonryItemDecorator.masonryOptions );
-		//msnry.addItems(node);
+		//var container = document.querySelector(masonryItemDecorator.parentNodeId);
+		//var msnry = new Masonry( container, masonryItemDecorator.masonryOptions );
+		var msnry = masonryItemDecorator.parentNodes;
+		msnry.addItems(node);
 
 		return {
 			teardown: function() {}
 		}
 	};
 
-	masonryItemDecorator.parentInfo = this;
+	//masonryItemDecorator.parentInfo = this;
+	//masonryItemDecorator.parentNodeId = '#container';
 	masonryItemDecorator.parentNodeId = '#container';
+	masonryItemDecorator.parentNodes = new Masonry();
 	masonryItemDecorator.masonryOptions = {
 		columnWidth: 250,
 		itemSelector: '.item'
